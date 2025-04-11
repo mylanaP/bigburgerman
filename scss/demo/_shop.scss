@@ -1,0 +1,341 @@
+
+/* ----------------------------------------------------------------
+
+	shop.scss
+
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Shop
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Add here styles for shop pages. Thanks!
+-----------------------------------------------------------------*/
+
+
+/* Category
+-----------------------------------------------------------------*/
+.category {
+	position: relative;	
+	box-shadow: 0px 0px 30px 3px #f7f6f6;
+	border-radius: 0.8rem;
+
+	
+	@include transition(all 0.5s ease-in-out);
+
+	.category-details {
+		padding: 1.875rem .875rem;
+	}
+
+	.category-image {
+		img {
+			width: 100%;
+			border-top-left-radius: 0.8rem;
+			border-top-right-radius: 0.8rem;
+		}
+	}
+
+	.category-title {
+		font-weight: 700;
+		color: $secondary;
+	}
+
+	.category-quantity {
+		color: #8f8f8f;
+	}
+
+	.category-btn {
+		i {
+			font-size: 0.9rem;
+			margin-left: 0.5rem;
+		}
+	}
+}
+
+/* Product
+-----------------------------------------------------------------*/
+.product {
+	margin-bottom: 1.875rem;
+	position: relative;
+	box-shadow: 0px 6px 25px 3px #e0e0e0;
+	border-radius: 0.8rem;
+
+	.product-image {
+		position: relative;
+
+		img {
+			width: 100%;
+			border-top-left-radius:1rem;
+			border-top-right-radius:1rem;
+		}
+
+		> a:nth-of-type(2) {
+			opacity: 0;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			@include transition(all 0.3s ease-in-out);
+		}
+	}
+
+	.product-details {
+		padding: 1.875rem .875rem;
+		z-index: 1;
+	}
+
+	.product-price {
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1;
+		color: $secondary;
+
+		span {
+			background-color: transparent;
+			border-radius: 0.5rem;
+		}
+
+		del {
+			color: $secondary;
+			font-size: 1.3rem;
+			font-weight: 500;
+		}
+
+		sup {
+			font-size: 0.75rem;
+		}
+	}
+
+	.product-categories {
+		margin-top: -0.3rem;
+
+		a {
+			color: #6a6a6a;
+		}
+	}
+
+	.product-title {
+		font-weight: 700;
+	}
+
+	.product-quantity {
+		font-size: 1rem;
+		color: #6a6a6a;
+	}
+
+	.product-rating {
+		line-height: 1;
+		color: $secondary;
+		font-size: 1rem;
+
+		i {
+			color: #f6aa46;
+			font-size: 0.875rem;
+
+			&.empty {
+				color: rgba(#f6aa46, 0.5);
+			}
+		}
+	}
+
+	.product-btns {
+		@include transition(all 0.3s ease-in-out);
+	}
+
+	&:hover {
+		.product-image {
+			> a:nth-of-type(2) {
+				z-index: 1;
+				opacity: 1;
+			}
+		}
+
+		.add-to-wishlist {
+			background-color: $theme-color;
+			border: none;
+			color: white;
+		}
+
+		.product-price {
+			span {
+				background-color: #bf4f4f;			
+				color: $white;
+				padding: 0.2rem 0.5rem;
+
+				@include border-radius(0.5rem);
+			}			
+		}
+	}
+
+	.add-to-cart {
+		background-color: #3d3d3d;
+		color: #fff;
+		font-size: 1.25rem;		
+		font-weight: 700;
+		padding: .4rem 1.2rem;
+
+		@include border-radius(0.5rem);
+
+		&:hover {
+			background-color: $theme-color;
+		}
+	}
+
+	.add-to-wishlist {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		text-align: center;
+		padding: 0.5rem;
+		z-index: 3;
+		border: 1px solid white;
+		border-radius: .5rem;
+		color: white;
+		font-size: 1.25rem;
+		line-height: 1;
+		width: 2.375rem;
+		height: 2.375rem;
+		text-decoration: none;
+
+		@include transition(all 0.3s ease-in-out);				
+
+		&:hover {
+			color: $dark;
+		}
+	}
+}
+
+.onbest,
+.ontop,
+.onnew,
+.onhot,
+.onsale {
+    font-size: .875rem;
+    line-height: 1;
+    font-weight: 500;
+    padding: 0.8rem 0.5rem;
+	font-weight: 600;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 2;
+}
+
+.onhot {
+	background-color: #ff3263;
+	color: $white;
+}
+
+.onnew {
+	color: $theme-color;
+}
+
+.onbest {
+	background-color: #8b5ec7;
+	color: $white;
+}
+
+.ontop {
+	background-color: #5adbde;
+	color: $white;
+}
+
+.onsale {
+	background-color: #bf4f4f;
+	border-radius: 0.5rem;
+	letter-spacing: 0.1rem;
+	color: $white;
+}
+
+.banner-wishlist {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fe3362;
+}
+
+
+/* Ads
+-----------------------------------------------------------------*/
+
+.ads {
+    position: relative;
+    display: block;
+    margin-bottom: 2.5rem;
+
+    .ads-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .ads-bg-img {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+			border-radius: 2rem;
+        }
+    }
+
+    .ads-body {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.ads1 {
+		margin-bottom: 1.875rem;
+
+		.ads-body {
+			padding: 5rem 0 9rem;
+
+			p {
+				font-size: 1rem;
+				line-height: 1.5rem;
+				font-weight: 300;
+				color: $white;
+				letter-spacing: 0.05rem;
+			}
+
+			a {
+				font-size: .875rem;
+				padding: 1rem 2rem;
+				background-color: $theme-color;
+				border-radius: .5rem;
+				color: #fff;
+				text-decoration: none;
+				font-weight: 600;
+				letter-spacing: 0.05rem;
+			}
+
+			.product {
+				box-shadow: none;
+			}
+
+			@include media-breakpoint-down(lg) {
+				p {
+					margin-bottom: 0.5rem;
+				}
+
+				h2 {
+					margin: 0;
+				}
+			}
+
+			@include media-breakpoint-down(md) {
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,136 @@
+
+/* ----------------------------------------------------------------
+
+	extras.scss
+
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Extra Styles
+-----------------------------------------------------------------*/
+
+.shop-now-link {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+	letter-spacing: 0.05rem;
+    padding: 1.5rem 3rem;
+	display: inline-block;
+    background-color: #c5562b;
+    border-radius: 1rem;
+	text-decoration: none;
+
+	i {
+		font-size: 0.9rem;
+		margin-left: 0.5rem;
+	}
+}
+
+
+// decorations //
+.decoration {
+	position: relative;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+	}
+
+	&.meat-1::after {
+		content: url(../images/meat1.png);
+		left: 0;
+	}
+	
+
+	&.meat-2::after {
+		content: url(../images/meat2.png);
+		right: 0;
+		top: 0;
+	}
+
+	&.plant::after {
+		content: url(../images/plant.png);
+		bottom: -6.25rem;
+		left: 0;
+	}
+
+	&.peppers::before {
+		content: url(../images/peppers.png);
+		bottom: -6.7rem;
+		z-index: 1;
+	}
+
+	&.sause::after {
+		content: url(../images/sause.png);
+		top: -1.3rem;
+		right: 2.75rem;
+		z-index: 1;
+	}
+}
+
+.slick-slider {
+	z-index: 2;
+
+	.slick-slide {
+		margin: 0 0.9375rem;
+	}
+}
+
+// slider items//
+.slick-prev::before, .slick-next:before {
+	font-size: 3rem;
+	opacity: 1;
+	color:#dcdcdc;
+
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+ }
+
+ .slick-prev {
+	left: -10rem;
+
+	@media (max-width : 1600px) {
+		left: -2.5rem;
+	}
+ }
+
+ .slick-next {
+    right: -7rem;
+
+	@media (max-width : 1600px) {
+		right: -0.5rem;
+	}
+}
+
+.slick-list {
+	padding: 2rem 0;
+}
+
+.about-slick {
+	.slick-slide {
+		opacity: 0.3;
+		transition: opacity 0.3s;
+
+		&.slick-cloned {
+			opacity: 0.3;
+			transition: opacity 0.3s;
+		}
+
+		&.slick-current.slick-active {
+			opacity: 1;
+			transition: opacity 0.3s;
+		}
+	}
+
+	.slick-prev {
+		left:10rem;
+	}
+
+	.slick-next {
+		right: 14rem;
+	}
+}
